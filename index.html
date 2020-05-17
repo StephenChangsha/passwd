@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <link rel="shortcut icon" href="https://www.stephen-zeng.top/img/logo.png" type="image/x-icon">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/StephenChangsha/passwd/passwd_1.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta charset="utf-8">
+    <title>Stephen Password</title>
+	<script src="https://cdn.jsdelivr.net/gh/StephenChangsha/passwd/passwd_2.js"></script>
+</head>
+
+
+<body
+    style="height: 100%; background: url('https://cdn.jsdelivr.net/gh/StephenChangsha/img/img/passwd_back.png') center no-repeat; background-size: cover; background-attachment: fixed;">
+    <div
+        style="width: 100vw; height: 100vh; display : flex; overflow-x: hidden; overflow-y: auto; justify-content: center; align-items: center;">
+        <style>
+            .demo-card-wide.mdl-card {
+                width: 512px;
+            }
+            .demo-card-wide>.mdl-card__title {
+                color: #fff;
+                height: 176px;
+                background: url('https://cdn.jsdelivr.net/gh/StephenChangsha/img/img/passwd_front.png') center / cover;
+            }
+            .demo-card-wide>.mdl-card__menu {
+                color: #fff;
+            }
+        </style>
+
+        <div class="demo-card-wide mdl-card mdl-shadow--6dp"
+            style="width: min-content; height: min-content; position: absolute; margin: auto;">
+            <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text">计算密码</h2>
+            </div>
+                <div class="mdl-card__supporting-text">
+                    <div style="padding-left: 5pt; padding-right: 5pt">
+                        <br>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="psw" 
+                            style="text-align: center;">
+                            <input class="password mdl-textfield__input" type="password" id="password" name="password">
+                            <label class="mdl-textfield__label" for="password">记忆密码</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                            style="text-align: center;">
+                            <input class="mdl-textfield__input" type="text" id="key" name="key">
+                            <label class="mdl-textfield__label" for="key">区别代码</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                            style="text-align: center;">
+                            <span class="code16" type="text" id="code16" name="code16d">此处为最终结果</span><br /><br />
+							<span id="pbs2" type="text" style="display:none;">将 计算密码 按钮拖至书签栏可添加书签，手机端可直接收藏</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <button id="login" onclick="copy();"
+                        class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        复制
+                    </button>
+                    <button id="pbt" onclick="if(confirm('你的记忆密码是：'+$('#password').val()+'确定吗？'))window.location.href=window.location.href+'?pass='+$.md5($('#password').val(), 'blue');"
+                        class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                        跳转到带密码网址
+                    </button>
+					<a id="pbs" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" style="display:none;">
+                        计算密码
+                    </a>
+                </div>
+        </div>
+    </div>
+</body>
+
+</html>
